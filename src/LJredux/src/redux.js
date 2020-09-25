@@ -1,9 +1,10 @@
 
 
 function createStore(reducer) {
-    let currentState = {};
+    let currentState;
     let listener = [];
     function getState() {
+      
         return currentState;
     }
     function subscribe(listen) {

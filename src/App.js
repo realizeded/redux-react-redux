@@ -1,16 +1,18 @@
 import React,{Component} from 'react';
-import store from './store/app.redux';
+import Show from './components/Show';
+import {Provide} from './LJReact-redux/src/index';
+import store from './store/app.redux'
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = store.getState();
-        store.subscribe(()=>{console.log(1)});
-        store.dispatch({type:'mike1'});
-        store.dispatch({type:'mike2'});
-        store.dispatch({type:'mike3'});
+        this.state = {};
     }
     render() {
-        return (<div>LJRedux</div>);
+        return (<div>
+            <Provide store={store}>
+            <Show/>
+            </Provide>
+        </div>);
     }
 }
 export default App;

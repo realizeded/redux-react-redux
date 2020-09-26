@@ -1,32 +1,30 @@
-|-- undefined
-    |-- .gitignore
-    |-- directoryList.md
-    |-- package.json
-    |-- README.md
-    |-- yarn.lock
-    |-- public
-    |   |-- favicon.ico
-    |   |-- index.html
-    |   |-- logo192.png
-    |   |-- logo512.png
-    |   |-- manifest.json
-    |   |-- robots.txt
+redux 
+    |
     |-- src
         |-- App.js
         |-- index.js
         |-- components
         |   |-- Show
         |       |-- index.js
-        |-- LJReact-redux
-        |   |-- src
-        |       |-- connect.js
-        |       |-- index.js
-        |       |-- util.js
-        |       |-- component
-        |           |-- Provide
-        |               |-- index.js
-        |-- LJredux
-        |   |-- src
-        |       |-- redux.js
+        |
         |-- store
-            |-- app.redux.js
+        |     |-- app.redux.js
+        |
+        |--lib      
+            |-- LJReact-redux
+            |   |-- src
+            |       |-- connect.js
+            |       |-- index.js
+            |       |-- util.js
+            |       |-- component
+            |           |-- Provide
+            |               |-- index.js
+            |-- LJredux
+            |   |-- src
+            |       |-- redux.js
+            |       |-- applyMiddleWare 
+            |
+            |-- redux-thunk
+                |-- src
+                    |-- redux.js
+             

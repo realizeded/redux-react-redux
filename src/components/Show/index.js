@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
-import store from '../../store/app.redux';
+import store,{delayAdd,delayAdds} from '../../store/app.redux';
 import propTypes from 'prop-types';
-import {connect} from '../../LJReact-redux/src/index';
+import {connect} from '../../lib/LJReact-redux/src/index';
 class Show extends Component {
 
     constructor(props,context) {
@@ -11,14 +11,24 @@ class Show extends Component {
        /*  this.state = store.getState();
         store.subscribe(()=>this.setState(()=>store.getState())); */
         this.handleClick = this.handleClick.bind(this);
+        this.handleDelayClick = this.handleDelayClick.bind(this);
+        this.handleArrClick = this.handleArrClick.bind(this);
     }
     handleClick() {
         this.props.handleClick();
+    }
+    handleDelayClick() {
+        this.props.delayAdd();
+    }
+    handleArrClick() {
+        this.props.delayAdds();
     }
     render() {
       return (<div>
             {this.props.num}
             <input type="button" value="加1" onClick={this.handleClick}/>
+            <input type="button" value="delay加1" onClick={this.handleDelayClick}/>
+            <input type="button" value="arr-thunk" onClick={this.handleArrClick}/>
         </div>);
     }
 }
@@ -42,5 +52,6 @@ function handleClick() {
         type:'ADD'
     };
 }
+
 /* export default connect(mapStateToProps,mapDispatchToProps)(Show); */
-export default connect(mapStateToProps,{handleClick})(Show);
+export default connect(mapStateToProps,{handleClick,delayAdd,delayAdds})(Show);

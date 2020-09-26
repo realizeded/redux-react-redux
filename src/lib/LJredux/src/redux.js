@@ -1,6 +1,9 @@
+import applyMiddleWare from './applyMiddleWare';
 
-
-function createStore(reducer) {
+function createStore(reducer,Actuator) {
+    if(Actuator) {
+        return Actuator(createStore)(reducer);
+    }
     let currentState;
     let listener = [];
     function getState() {
@@ -19,5 +22,6 @@ function createStore(reducer) {
     return {getState,subscribe,dispatch};
 }
 export {
-    createStore
+    createStore,
+    applyMiddleWare
 }
